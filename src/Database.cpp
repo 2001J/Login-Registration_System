@@ -18,8 +18,9 @@ bool Database::userExists(const std::string& username) const {
 }
 
 bool Database::validateUser(const std::string& username, const std::string& password) const {
+    std::string encryptedPassword = User(username, password).getPassword();
     for (const auto& user : users) {
-        if (user.getUsername() == username && user.getPassword() == password) {
+        if (user.getUsername() == username && user.getPassword() == encryptedPassword) {
             return true;
         }
     }

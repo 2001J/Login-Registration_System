@@ -21,11 +21,11 @@ bool Registration::registerUser(const std::string& username, const std::string& 
     return true;
 }
 
-bool Registration::isValidUsername(const std::string& username) const {
+bool Registration::isValidUsername(const std::string& username) {
     return !username.empty() && username.length() >= 3;
 }
 
-bool Registration::isValidPassword(const std::string& password) const {
+bool Registration::isValidPassword(const std::string& password) {
     // Password must be at least 8 characters long and contain at least one letter and one number
     std::regex passwordPattern("^(?=.*[A-Za-z])(?=.*\\d)[A-Za-z\\d]{8,}$");
     return std::regex_match(password, passwordPattern);

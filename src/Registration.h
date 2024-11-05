@@ -6,13 +6,13 @@
 
 class Registration {
 public:
-    Registration(Database& db);
+    explicit Registration(Database& db);
     bool registerUser(const std::string& username, const std::string& password);
 
 private:
     Database& db;
-    bool isValidUsername(const std::string& username) const;
-    bool isValidPassword(const std::string& password) const;
+    [[nodiscard]] static bool isValidUsername(const std::string& username) ;
+    [[nodiscard]] static bool isValidPassword(const std::string& password) ;
 };
 
 

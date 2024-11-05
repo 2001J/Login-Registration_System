@@ -8,8 +8,8 @@
 class Database {
 public:
     bool addUser(const User& user);
-    bool userExists(const std::string& username) const;
-    bool validateUser(const std::string& username, const std::string& password) const;
+    [[nodiscard]] bool userExists(const std::string& username) const;
+    [[nodiscard]] bool validateUser(const std::string& username, const std::string& password) const;
 
 private:
     std::vector<User> users;

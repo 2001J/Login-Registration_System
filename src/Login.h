@@ -6,8 +6,10 @@
 
 class Login {
 public:
-    Login(Database& db);
+    explicit Login(Database& db);
     bool loginUser(const std::string& username, const std::string& password);
+
+    bool userExists(const std::string& username);
 
 private:
     Database& db;

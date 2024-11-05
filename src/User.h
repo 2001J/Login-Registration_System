@@ -5,10 +5,10 @@
 
 class User {
 public:
-    User(const std::string& username, const std::string& password);
-    std::string getUsername() const;
-    std::string getPassword() const;
-    std::string encryptPassword(const std::string& password) const;
+    User(std::string  username, const std::string& password);
+    [[nodiscard]] std::string getUsername() const;
+    [[nodiscard]] std::string getPassword() const;
+    static std::string encryptPassword(const std::string& password) ;
 
 private:
     std::string username;
